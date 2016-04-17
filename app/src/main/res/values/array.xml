@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="pref_sort_order_titles">
-        <item>Popular</item>
-        <item>Rating</item>
+        <item>@string/pref_sort_order_popular_label</item>
+        <item>@string/pref_sort_order_rating_label</item>
+        <item>@string/pref_sort_order_favorite_label</item>
     </string-array>
     <string-array name="pref_sort_order_values">
-        <item>popular</item>
-        <item>top_rated</item>
+        <item>@string/pref_sort_order_popular</item>
+        <item>@string/pref_sort_order_rating</item>
+        <item>@string/pref_sort_order_favorite</item>
+    </string-array>
+    <string-array name="sort_order_array">
+        <item>Popular</item>
+        <item>Top Rated</item>
+        <item>Favorite</item>
     </string-array>
 </resources>

@@ -4,4 +4,13 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    tools:context=".MainActivity">
+
+    <fragment
+        android:id="@+id/movie_fragment"
+        android:name="com.example.maximilianvoss.popularmoviesmv.MoviesFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@android:layout/list_content" />
+
+</FrameLayout>

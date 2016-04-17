@@ -9,13 +9,15 @@ import android.os.Parcelable;
 public class Movie implements Parcelable{
 
     private String image_path;
+    private String mdb_movie_id;
     private String movie_name;
     private String user_rating;
     private String overview;
     private String release_date;
 
-    public Movie(String path, String name, String rating, String synopsis, String release){
+    public Movie(String path, String mdb_movie_id, String name, String rating, String synopsis, String release){
         this.image_path = path;
+        this.mdb_movie_id = mdb_movie_id;
         this.movie_name = name;
         this.user_rating = rating;
         this.overview = synopsis;
@@ -25,6 +27,7 @@ public class Movie implements Parcelable{
     protected Movie(Parcel in) {
 
         image_path = in.readString();
+        mdb_movie_id = in.readString();
         movie_name = in.readString();
         user_rating = in.readString();
         overview = in.readString();
@@ -34,6 +37,8 @@ public class Movie implements Parcelable{
     public String getImage_path(){
         return image_path;
     }
+
+    public String getMdb_movie_id() { return mdb_movie_id; }
 
     public String getMovie_name(){
         return movie_name;
@@ -59,6 +64,7 @@ public class Movie implements Parcelable{
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(image_path);
+        dest.writeString(mdb_movie_id);
         dest.writeString(movie_name);
         dest.writeString(user_rating);
         dest.writeString(overview);
@@ -66,18 +72,17 @@ public class Movie implements Parcelable{
     }
 
     public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>(){
+
         @Override
         public Movie createFromParcel(Parcel source) {
 
             return new Movie(source);
-
         }
 
         @Override
         public Movie[] newArray(int size) {
 
             return new Movie[size];
-
         }
     };
 

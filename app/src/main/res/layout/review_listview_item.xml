@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="15dp"
+    android:elevation="5dp">
+
+    <TextView
+        android:id="@+id/review_author"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_marginBottom="20dp"
+        android:text="By: MisterVegas"/>
+
+    <TextView
+        android:id="@+id/review_content"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:text="This is complete bullshit stuff my friend I tell yoouuuuu."/>
+
+</LinearLayout>
