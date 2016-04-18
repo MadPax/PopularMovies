@@ -2,6 +2,7 @@ package com.example.maximilianvoss.popularmoviesmv;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,7 @@ public class MoviesAdapter extends CursorAdapter {
         ViewHolder viewHolder = (ViewHolder) view.getTag();
 
         Picasso.with(context).load(cursor.getString(MoviesFragment.COL_MOVIE_POSTER_PATH)).into(viewHolder.imageView);
+        Log.v(LOG_TAG, "In bindView: " + cursor.getString(MoviesFragment.COL_MOVIE_POSTER_PATH));
 
     }
 

@@ -3,14 +3,7 @@ package com.example.maximilianvoss.popularmoviesmv;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 import com.example.maximilianvoss.popularmoviesmv.sync.PopularMoviesSyncAdapter;
 
@@ -39,49 +32,6 @@ public class MainActivity extends AppCompatActivity implements MoviesFragment.Ca
 
         getSupportActionBar().setElevation(0f);
         PopularMoviesSyncAdapter.initializeSyncAdapter(this);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.android_action_bar_spinner_menu, menu);
-
-        MenuItem item = menu.findItem(R.id.spinner);
-        Spinner spinner = (Spinner) MenuItemCompat.getActionView(item);
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.sort_order_array, R.layout.spinner_layout);
-        adapter.setDropDownViewResource(R.layout.spinner_layout);
-
-        spinner.setAdapter(adapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                Object item = parent.getSelectedItem().toString();
-                MoviesFragment mf = (MoviesFragment) getSupportFragmentManager().findFragmentById(R.id.movie_fragment);
-
-                String POPULAR_SEARCH_KEY = "popular";
-                String TOP_RATED_SEARCH_KEY = "top_rated";
-                String FAVORITE_SEARCH_KEY = "favorite";
-
-                if (item.equals("Popular")) mf.onSortOrderChanged(POPULAR_SEARCH_KEY);
-                if (item.equals("Top Rated")) mf.onSortOrderChanged(TOP_RATED_SEARCH_KEY);
-                if (item.equals("Favorite")) mf.onSortOrderChanged(FAVORITE_SEARCH_KEY);
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-
-        });
-
-        return true;
-
     }
 
     @Override
